@@ -1,0 +1,7 @@
+.delete-button{width: 15px; height: 15px; background: url("../images/close-button.png"); background-size: 100% 100%; cursor: pointer;}
+.alert-bg{ width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; left: 0px; top: 0px; position: fixed;}
+.alert-container{ font-family: sans-serif; width:500px; margin: 300px auto;  background: #ecf0f1; border-radius: 15px; position: fixed; left: 50%; top: 50%; margin-top: -150px; margin-left: -250px; border: 1px solid #e74c3c; box-shadow: 1px 1px 5px #999; }
+.alert-container .alert-head{ height: 35px; background: #e74c3c; color: #ecf0f1; width: 96%; padding: 2% 2% 0 2%; text-indent: 2%; font-size: 20px; border-top-left-radius: 15px; border-top-right-radius: 15px;}
+.alert-container .alert-body{ height: 70px; background: #ecf0f1; color: #e74c3c; width: 84%; text-align: center; padding: 10% 8% 2% 8%;}
+.alert-container .alert-head #alert-close-button{ float:right; width: 25px; cursor: pointer; font-size: 25px;}
+.alert-container .ok-button{ width: 100px; height: 35px; background: #e74c3c; text-align: center; margin: 10px auto; border-radius: 5px ; font-size:20px; color: #ecf0f1; line-height: 35px; cursor: pointer; }

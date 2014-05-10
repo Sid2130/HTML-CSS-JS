@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+		    $('.btn').click(function(){
+		    	getmessage();
+		    })
+		});
+
+		function getmessage(){
+			var msg= $("#name").val();
+			alertmessage(msg);
+		}
+
+		function alertmessage(message){
+			$('.alert-body').text(message);
+			$('.alert-bg').fadeIn("fast",function(){
+					$('.ok-button,#alert-close-button').click(function(){
+			    	$('.alert-bg').hide();
+			    });
+			});
+		}
+
+	</script>
+	<body>
+		<div class="body-content-area">
+			<div class="text-box-container">
+				<input type="text" id="name" class="float-left" placeholder="Enter Name">
+				<div class="float-clear"></div>
+			</div>
+			<button class="btn" name="get-started" onclick="getmessage();">Alert</button>
+			<div class="alert-bg">
+				<div class="alert-container">
+					<div class="alert-head">Error <span id="alert-close-button">&times;<span></span><div style="clear:both;"></div></div>
+					<div class="alert-body"></div>
+					<div class="ok-button">Ok</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
