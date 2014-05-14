@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<style type="text/css">
+			.arrow-wrapper{ margin: 0 auto; position: relative; height: 50px; width: 772px;}
+			.arrow-main-container{ width: 200px; height: 50px; text-align: center; font-size: 24px; line-height: 48px; color: #fff; }
+			.arrow-main-container .right-side{ width:20px; height:50px; background: rgba(0,0,0,0);}
+			.arrow-main-container .left-side { width:20px; height:50px; background: #eee;}
+			.arrow-main-container .center-content{ height:50px; width: 160px; background: #eee;}
+
+
+
+			.arrow-main-container .arrow { 	width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; }
+			.arrow-main-container .arrow-left{  border-left: 20px solid #fff; }
+			.arrow-main-container .arrow-right{ border-left: 20px solid #eee; }
+
+			.steps { position: relative; }
+
+			#arrow1{ top:0px; left:0px; position: absolute; z-index:10}
+			#arrow2{ top:0px; left:190px; position: absolute; z-index:9}
+			#arrow3{ top:0px; left:380px; position: absolute; z-index:8}
+			#arrow4{ top:0px; left:570px; position: absolute; z-index:7}
+
+			.active, .done {cursor: pointer;}
+			.active .arrow-left,.active .center-content{ background: #269abc; }
+			.active .arrow-right{border-left: 20px solid  #269abc;}
+
+			.inactive .arrow-left,.inactive .center-content{ background: #ed9c28; }
+			.inactive .arrow-right{border-left: 20px solid #ed9c28}
+
+			.done .arrow-left,.done .center-content{ background: #47a447; color: #fff; }
+			.done .arrow-right{border-left: 20px solid #47a447;;}
+
+			.pull-left{ float: left;}
+			.pull-right{ float: right;}
+			.clearfix{ clear: both;}
+		</style>
+	</head>
+	<body>
+		<div style="margin: 0 auto; height: 80px; padding-top: 11px; border: 1px solid #555; width: 800px;">
+			<div class="arrow-wrapper">
+			    <div class="arrow-main-container pull-left done" id="arrow1">
+			        <div class="left-side pull-left">
+			             <div class="arrow arrow-left"></div>
+			        </div>
+			        <div class="center-content pull-left">Step 1</div>
+			        <div class="right-side pull-left">
+			            <div class="arrow arrow-right"></div>
+			        </div>
+			        <div class="clearfix"></div>
+			    </div>
+
+			    <div class="arrow-main-container pull-left active" id="arrow2">
+			        <div class="left-side pull-left">
+			             <div class="arrow arrow-left"></div>
+			        </div>
+			        <div class="center-content pull-left">Step 2</div>
+			        <div class="right-side pull-left">
+			            <div class="arrow arrow-right"></div>
+			        </div>
+			        <div class="clearfix"></div>
+			    </div>
+			    
+			    <div class="arrow-main-container pull-left inactive"  id="arrow3">
+			        <div class="left-side pull-left">
+			             <div class="arrow arrow-left"></div>
+			        </div>
+			        <div class="center-content pull-left">Step 3</div>
+			        <div class="right-side pull-left">
+			            <div class="arrow arrow-right"></div>
+			        </div>
+			        <div class="clearfix"></div>
+			    </div>
+
+			     <div class="arrow-main-container pull-left inactive"  id="arrow4">
+			        <div class="left-side pull-left">
+			             <div class="arrow arrow-left"></div>
+			        </div>
+			        <div class="center-content pull-left">Step 4</div>
+			        <div class="right-side pull-left">
+			            <div class="arrow arrow-right"></div>
+			        </div>
+			        <div class="clearfix"></div>
+			    </div>
+			    <div class="clearfix"></div>
+		    </div>
+		</div>
+	</body>
+</html>
