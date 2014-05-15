@@ -1,4 +1,4 @@
-@media screen and (max-width: 1000px) and (min-width: 300px){
+@media screen and (max-width: 1000px) and (min-width: 200px){
 	.header .contents{ width: 100%; font-size: 20px; padding: 15px 0px; border-bottom: 1px solid #ecf0f1;}
 	.nav-collapse { width: 100%; text-align: center;}
 	.nav-collapse ul li:first-child{ border-top: 1px solid #ecf0f1; margin-top: 15px;}
