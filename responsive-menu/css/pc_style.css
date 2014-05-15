@@ -1,0 +1,21 @@
+body{ background: url('../img/background-pc1.jpg'); background-size: 100% 110%;}
+.body-container{ width:1100px; margin: 0 auto; }
+.header-wrapper{ max-width: 1200px; font-size: 20px; margin: 0 auto;}
+.logo{ font-size: 40px; font-weight: lighter;}
+
+.grid .icon-container { width:200px; font-size: 20px; margin: 15px; text-align: center; color: #ecf0f1; cursor: pointer; padding: 15px 0px; border-radius: 10px;  }
+.grid .icon-container:hover, .grid .icon-container:hover{ color: #f74f95; transition: color 0.35s ease; background: rgba(10,10,10,0.6); transition: background 0.35s ease;}
+.grid .icon-container .icon { font-size: 60px; border-radius: 50%; border: 1px solid; border: 1px solid; text-align: center; width: 150px; height: 150px; line-height: 150px; margin: 15px auto; }
+
+
+.grid-1 { width:80%; margin: 50px auto;}
+.grid-2 { width:64.74%; margin: 5px; }
+.grid-3 { width:32.37%; margin: 5px; }
+.grid-4{ width: 24%; margin: 0 0.5%;  border: 0px solid #fff; }
+
+.tags{ width : 220px; border: 1px solid #fff; border-radius: 10px; font-size: 20px; font-weight: lighter; text-align: center; color: #fff; line-height: 45px; margin: 20px auto; }
+.tags .labels { height: 100%; background: rgba(100,100,100,0.4);  border-top-left-radius:8px; border-top-right-radius: 8px; }
+.tags .data { height: 100%; background: rgba(0,0,0,0.4);  color: #fff;}
+.tags .data:after{ content: ""; clear: both;}
+
+#g3Two{ padding-top: 50px;}

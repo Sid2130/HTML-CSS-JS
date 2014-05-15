@@ -1,0 +1,13 @@
+@media screen and (max-width: 1000px) and (min-width: 300px){
+	.header .contents{ width: 100%; font-size: 20px; padding: 15px 0px; border-bottom: 1px solid #ecf0f1;}
+	.nav-collapse { width: 100%; text-align: center;}
+	.nav-collapse ul li:first-child{ border-top: 1px solid #ecf0f1; margin-top: 15px;}
+	.nav-collapse ul li:last-child{ padding-bottom: 15px; border-bottom: none;}
+	.nav-toggle{ float: right; margin: 16px; display: block;}
+}
+
+
+@media screen and (min-width: 1001px){
+	.header .contents{ width: 100px; font-size: 20px; float: left; padding: 15px 0px;}
+	.nav-collapse{ width: auto; text-align: center;}
+}
