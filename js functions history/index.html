@@ -1,0 +1,220 @@
+<!-- 
+
+The code shows an example by which we can create history of JS functions called.
+Just like clicking the browser's back button loads the page visited just before the current page,
+Clicking the "Back button"  here will call the JS function executed last
+
+ -->
+
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			.background{ background : #2ecc71; color: #fff; text-aligm: center; position: relative; width: 100%; height: 100%; font-family: 'Roboto', sans-serif;}
+			.text-container { text-align: center; font-style: italics; width: 700px; height: 400px; position: absolute; top: 50%; left: 50%; margin-top: -200px; margin-left: -350px; }
+			.text-container .heading{ font-size: 48px; font-weight: 400; }
+			.text-container .description{ font-style: italic; font-size: 25px; font-weight: 300; margin-top: 30px }
+
+			.buttons-container { height: 135px; width: 700px; position: absolute; bottom: 10px; left: 50%; margin-left: -350px; background: rgba(2,2,2,0.5); padding: 20px; border-radius: 15px; }
+			.buttons-container .button{width: 90px; height: 40px; display: inline-block; text-align: center; vertical-align: middle; font-size: 25px; line-height: 35px; padding: 5px 10px; border: 2px solid #fff; border-radius: 10px; margin: 0 1.6%; cursor: pointer; }
+
+			.green{ background: #2ecc71;}
+			.green:active{ background: #27ae60}
+
+			.red{ background: #e74c3c;}
+			.red:active{ background: #c0392b}
+
+			.purple{ background: #9b59b6;}
+			.purple:active{ background: #8e44ad;}
+
+			.orange{ background: #e67e22;}
+			.orange:active{ background:#d35400;}
+
+			.cyan{ background: #3498db;}
+			.cyan:active{ background: #2980b9;}
+
+			.grey{ background: #95A5A6;}
+			.grey:active{ background: #6C7A89}
+			
+		</style>
+	</head>
+
+	<body style="margin: 0px;" onload="one();">
+
+		<!-- Wrapper to fill the entire screen -->
+		<div class="background">
+			<div class="text-container">
+				<div class="heading"></div>
+				<div class="description"></div>
+			</div>
+
+			<div class="buttons-container">
+				<!-- Buttons to call different functions -->
+				<div class="button green" onclick="one();">One</div>
+				<div class="button red" onclick="two();">Two</div>
+				<div class="button cyan" onclick="three();">Three</div>
+				<div class="button orange" onclick="four();" >Four</div>
+				<div class="button purple" onclick="five();" >Five</div>
+
+				<!-- Back button to call the function executed last -->
+				<div class="button grey" style=" display: block; margin: 30px auto;" onclick="gobackFunction()">Back</div>
+			</div>
+		</div>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+
+			// Array to create a stack and to keep record of all the functions called
+			var functionsArray = new Array();
+
+			// Everytime a function is called, it name wil be stored in this variable
+			var lastFunctionCalled ="";
+
+
+			function one(back){
+				lastFunctionCalled = "one(back)";
+
+				// back parameter is set only when a function is called by back button, significance of this is that if a function is called by back button, then it should not be pushed inot the stack
+				if(back!="back"){
+
+					// condtion is used to check last function called. If a function is called more than once consecutively, it should be pushed in stack only once
+					if(functionsArray[functionsArray.length - 1]!=lastFunctionCalled){
+
+						// Array length will only be zero when first function in the stack will be called by clicking the back button. after that when another function is called, 1st function must be pushed in stack again, so functionsArray.push("one(back)") will push function one() again in stack wth parameter back 
+						if(functionsArray.length == 0){
+					        functionsArray.push("one(back)");
+					    }
+						functionsArray.push(lastFunctionCalled);
+					}
+				}
+
+				// Content of the function i.e function code starts from here
+				$(".background").css({
+					"background":"#2ecc71",
+					"transition": "background 0.8s",
+				});
+
+				$(".heading").html("Function One was called !!!!");
+				$(".description").html("");				
+			}
+
+			function two(back){
+				lastFunctionCalled = "two(back)";
+				if(back!="back"){
+					if(functionsArray[functionsArray.length - 1]!=lastFunctionCalled){
+						if(functionsArray.length == 0){
+					        functionsArray.push("one(back)");
+					    }
+						functionsArray.push(lastFunctionCalled);
+					}
+				}
+				$(".background").css({
+					"background":"#e74c3c",
+					"transition": "background 0.8s",
+				});
+				$(".heading").html("Function Two was called !!!!");
+				$(".description").html("");
+			}
+
+
+			function three(back){
+				lastFunctionCalled = "three(back)";
+				if(back!="back"){
+					if(functionsArray[functionsArray.length - 1]!=lastFunctionCalled){
+						if(functionsArray.length == 0){
+					        functionsArray.push("one(back)");
+					    }
+						functionsArray.push(lastFunctionCalled);
+					}
+				}
+				$(".background").css({
+					"background":"#3498db",
+					"transition": "background 0.8s",
+				});
+				$(".heading").html("Function Three was called !!!!");
+				$(".description").html("");
+			}
+
+			function four(back){
+				lastFunctionCalled = "four(back)";
+				if(back!="back"){
+					if(functionsArray[functionsArray.length - 1]!=lastFunctionCalled){
+						if(functionsArray.length == 0){
+					        functionsArray.push("one(back)");
+					    }
+						functionsArray.push(lastFunctionCalled);
+					}
+				}
+				$(".background").css({
+					"background":"#e67e22",
+					"transition": "background 0.8s",
+				});
+				$(".heading").html("Function Four was called !!!!");
+				$(".description").html("");
+
+				
+			}
+
+			function five(back){
+				lastFunctionCalled = "five(back)";
+				if(back!="back"){
+					if(functionsArray[functionsArray.length - 1]!=lastFunctionCalled){
+						if(functionsArray.length == 0){
+					        functionsArray.push("one(back)");
+					    }
+						functionsArray.push(lastFunctionCalled);
+					}
+				}
+				$(".background").css({
+					"background":" #9b59b6",
+					"transition": "background 0.8s",
+				});
+
+				$(".heading").html("Function Five was called !!!!");
+				$(".description").html("");
+			}
+
+
+
+			// The function will called after back button is clicked
+			function gobackFunction(){ 
+			  
+			  // popping out the content of array
+			  var functionString =functionsArray.pop();
+			  
+			  // If the array is empty
+			  if(functionString == null || functionString == ""){
+			    alert("No more functions to call");
+			  }
+			  else{
+			  	// if popped function is not same as last called function
+			    if( functionString != lastFunctionCalled){
+			    	// Breaking the popped string into two i.e. name and parameters
+			    	var result = functionString.split('(');
+
+			    	// Storing the function name
+			    	var functionName = window[result[0]];
+
+			    	// Array of parameters
+			    	var stringTwo = result[1];
+
+			    	// Removing the ')' from parameters string
+			    	var pramString =  stringTwo.split(')');  
+
+			    	// Getting the exact parameters string
+			    	var parameters = pramString[0];
+
+			    	// the exact parameters to be passed
+			    	var usableParameters = parameters.split(',');
+
+			    	// Calling the function with parameters
+			    	functionName.apply(null, usableParameters);
+			    }
+			    else{
+			      gobackFunction();
+			    }
+			  }
+			}
+		</script>
+	</body>
+</html>
